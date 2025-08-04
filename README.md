@@ -20,7 +20,7 @@ To answer this, I compiled a cleaned archive of exit poll data, applied MRP usin
 ## Analysis Overview
 
 ### 1. Data Sources
-- **Exit Poll Data**: [Roper Poll and NBC News archives, cleaned into CSV format](https://ropercenter.cornell.edu/elections-and-presidents/exit-polls)
+- **Exit Poll Data**: Roper Poll and NBC News archives, cleaned into CSV format
 - **Election Returns**: [MIT Election Data and Science Lab](https://electionlab.mit.edu/)
 - **Census Microdata**: [American Community Survey (ACS 5-Year PUMS via `tidycensus`)](https://www.census.gov/programs-surveys/acs/microdata/access.html)
 
