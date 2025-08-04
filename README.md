@@ -20,9 +20,9 @@ To answer this, I compiled a cleaned archive of exit poll data, applied MRP usin
 ## Analysis Overview
 
 ### 1. Data Sources
-- **Exit Poll Data**: [Roper Poll and NBC News archives, cleaned into CSV format (https://ropercenter.cornell.edu/elections-and-presidents/exit-polls)] 
+- **Exit Poll Data**: [Roper Poll and NBC News archives, cleaned into CSV format] (https://ropercenter.cornell.edu/elections-and-presidents/exit-polls) 
 - **Election Returns**: [MIT Election Data and Science Lab](https://electionlab.mit.edu/)
-- **Census Microdata**: [American Community Survey (ACS 5-Year PUMS via `tidycensus`) (https://www.census.gov/programs-surveys/acs/microdata/access.html)] 
+- **Census Microdata**: [American Community Survey (ACS 5-Year PUMS via `tidycensus`)] (https://www.census.gov/programs-surveys/acs/microdata/access.html)
 
 ### 2. Modeling
 - Multilevel logistic regression via `rstanarm`
@@ -40,7 +40,7 @@ To answer this, I compiled a cleaned archive of exit poll data, applied MRP usin
 - Filter by year, state, party, and exit poll question 
 - Includes vote share estimates for all 50 states via MRP  
 - Powered by historical data from 1998–2024
-- Replication code for the dashboard can be found on this [github page (https://github.com/joellegross/exit-poll-dashboard)].
+- Replication code for the dashboard can be found on this [github page] (https://github.com/joellegross/exit-poll-dashboard).
 
 ###  [See the Dashboard](https://exit-poll-dashboard.onrender.com)
 
