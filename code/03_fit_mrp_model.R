@@ -5,7 +5,7 @@ year = 2008
 prev_year = "2004"
 exit_data <- read_csv(paste0("../data/exit_poll_combined_", year,".csv"))
 
-prev_vote <- read_csv(paste0("../data/census/", prev_year, "_pres_dem_share_by_state.csv"))
+prev_vote <- read_csv(paste0("../data/past results/", prev_year, "_pres_dem_share_by_state.csv"))
 
 exit_data <- exit_data %>%
   left_join(prev_vote %>% rename(prev_vote_share = dem_share), by = "state")
