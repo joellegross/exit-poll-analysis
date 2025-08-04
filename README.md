@@ -14,9 +14,9 @@ This project compiles, visualizes, and models U.S. presidential election exit po
 Exit polls offer a real-time glimpse into voter demographics and preferences, but they are only conducted in a subset of states. This project tackles the question:  
 **Can we use historical data and demographic modeling to estimate how states without exit polls will vote?**
 
-To answer this, I compiled a cleaned archive of exit poll data, applied MRP using Census microdata and official election returns, and, additionally, built a dashboard for exploring the exit poll archive.
----
+To answer this, I compiled a cleaned archive of exit poll data, applied MRP using Census microdata and official election returns, and, additionally, built a dashboard for exploring the exit poll archive
 
+---
 ## Analysis Overview
 
 ### 1. Data Sources
