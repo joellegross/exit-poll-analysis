@@ -5,3 +5,5 @@ data/census/2016/poststrat_frame_CA.csv
 data/census/2020/poststrat_frame_CA.csv
 data/census/2024/poststrat_frame_CA.csv
 .DS_Store
+__pycache__/
+*.py[cod]
