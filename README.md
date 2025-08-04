@@ -24,7 +24,7 @@ To answer this, I compiled a cleaned archive of exit poll data, applied MRP usin
 - Includes vote share estimates for all 50 states via MRP  
 - Powered by historical data from 2008–2024
 
-###  [Try the Dashboard (hosted)](https://exitpoll-dashboard.onrender.com)
+###  [Try the Dashboard](https://exit-poll-dashboard.onrender.com)
 
 ---
 
