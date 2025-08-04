@@ -51,11 +51,11 @@ To answer this, I compiled a cleaned archive of exit poll data, applied MRP usin
 ```
 exit-poll-analysis/
 ├── data/                 # Exit poll CSVs, election returns, PUMS frames
-├── code/    		   # Code files for running MRP \& and analysis
-├── model/             # R scripts for MRP, poststratification, and evaluation
+├── code/    		          # Code files for running MRP \& and analysis
+├── model/                # R scripts for MRP, poststratification, and evaluation
 ├── output/               # Model predictions and diagnostics
 ├── report/               # Paper and slides summarizing the project
-├── report/    	    # Visualizations
+├── report/    	          # Visualizations
 └── README.md
 ```
 
