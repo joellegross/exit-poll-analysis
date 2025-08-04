@@ -1,11 +1,9 @@
 library(tidyverse)
 library(ggplot2)
 
-# === Paths ===
-actual_path <- "data"
-predicted_path <- "output"  # adjust if needed
 
-# === Load actuals ===
+actual_path <- "data/past results/"
+predicted_path <- "output"  
 actual_files <- list.files(actual_path, pattern = "_pres_dem_share_by_state\\.csv$", full.names = TRUE)
 
 actual_df <- map_dfr(actual_files, function(file) {
@@ -14,7 +12,6 @@ actual_df <- map_dfr(actual_files, function(file) {
     mutate(year = year)
 })
 
-# === Load predictions ===
 predicted_files <- list.files(predicted_path, pattern = "all_state_predictions_\\d{4}.*\\.csv$", full.names = TRUE)
 
 predicted_df <- map_dfr(predicted_files, function(file) {
@@ -22,8 +19,6 @@ predicted_df <- map_dfr(predicted_files, function(file) {
   read_csv(file) %>%
     mutate(year = year)
 })
-
-# === Standardize column names ===
 
 actual_df <- map_dfr(actual_files, function(file) {
   year <- str_extract(file, "\\d{4}")
@@ -34,9 +29,7 @@ actual_df <- map_dfr(actual_files, function(file) {
   filter(year != "2004")
 
 predicted_df <- predicted_df %>%
-  rename(state = state, predicted = vote_share)  # adjust as needed
-
-# === Join actuals with predictions ===
+  rename(state = state, predicted = vote_share)  
 combined_df <- left_join(predicted_df, actual_df, by = c("state", "year"))
 
 combined_df <- combined_df %>%
@@ -47,7 +40,6 @@ combined_df <- combined_df %>%
     abs_error = abs(error)
   )
 
-# === Compute error ===
 combined_df <- combined_df %>%
   mutate(error = predicted - actual,
          abs_error = abs(error),
@@ -56,11 +48,9 @@ combined_df <- combined_df %>%
 combined_df <- combined_df %>%
   mutate(year = relevel(factor(year), ref = "2020"))
 
-# === Run regression to test if year predicts error ===
 model <- lm(abs_error ~ year, data = combined_df)
 summary(model)
 
-# === Optional: ANOVA ===
 anova(model)
 
 combined_df <- combined_df %>%
@@ -77,6 +67,5 @@ p1 <- ggplot(combined_df, aes(x = year, y = abs_error)) +
   ) +
   theme_minimal(base_size = 14)
 
-# Save as PNG
-ggsave("plots/abs_error_by_year_boxplot.png", plot = p1, width = 8, height = 5)
+ggsave("../plots/abs_error_by_year_boxplot.png", plot = p1, width = 8, height = 5)
 

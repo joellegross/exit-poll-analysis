@@ -1,10 +1,8 @@
 library(tidycensus)
 library(tidyverse)
 
-# Set ACS year
 acs_year <- 2022
 
-# === STEP 1: Load ACS Summary Data (one call) ===
 acs_vars <- c(
   "B01001_001",  # Total population
   "B01001_026",  # Female population
@@ -25,7 +23,6 @@ acs_data <- get_acs(
   output = "wide"
 )
 
-# === STEP 2: Load age-by-sex data to compute Voting-Age Population (18+) ===
 age_sex_data <- get_acs(
   geography = "state",
   table = "B01001",
@@ -40,7 +37,6 @@ vap_data <- age_sex_data %>%
   summarise(voting_age_pop = sum(estimate), .groups = "drop") %>%
   rename(state_full = NAME)
 
-# === STEP 3: Calculate Percentages and Join ===
 acs_pct <- acs_data %>%
   transmute(
     state_full = NAME,
@@ -54,9 +50,8 @@ acs_pct <- acs_data %>%
   ) %>%
   drop_na(state)
 
-# === STEP 4: Save to CSV ===
 dir.create("data", showWarnings = FALSE)
 
-write_csv(acs_pct, file = "data/state_level_acs_summary_2022.csv")
+write_csv(acs_pct, file = "../data/census/state_level_acs_summary_2022.csv")
 
-message("✅ Saved ACS summary to data/state_level_acs_summary_2022.csv")
+message("Saved ACS summary to data/state_level_acs_summary_2022.csv")
