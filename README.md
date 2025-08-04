@@ -37,8 +37,7 @@ To answer this, I compiled a cleaned archive of exit poll data, applied MRP usin
 
 ##  Bonus: Visualization Dashboard
 - Dynamic visualizations of exit poll responses  
-- Filter by year, state, party, and exit poll question 
-- Includes vote share estimates for all 50 states via MRP  
+- Filter by year, state, primary, party, and exit poll question 
 - Powered by historical data from 1998–2024
 - Replication code for the dashboard can be found on this [github page](https://github.com/joellegross/exit-poll-dashboard).
 
