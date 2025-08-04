@@ -66,8 +66,8 @@ exit-poll-analysis/
 ---
 ## Key Findings
 
-- MRP effectively predicts vote share in states with and without exit polls.
-- Presence of an exit poll does **not** consistently reduce prediction error.
+- MRP effectively predicts vote share in states with and without exit polls
+- Presence of an exit poll does **not** consistently reduce prediction error
 - Demographic predictors such as race, education, can skew modeling reuslts
 
 ---
