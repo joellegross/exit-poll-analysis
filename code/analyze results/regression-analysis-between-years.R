@@ -2,8 +2,8 @@ library(tidyverse)
 library(ggplot2)
 
 
-actual_path <- "data/past results/"
-predicted_path <- "output"  
+actual_path <- "../data/past results"
+predicted_path <- "../output"  
 actual_files <- list.files(actual_path, pattern = "_pres_dem_share_by_state\\.csv$", full.names = TRUE)
 
 actual_df <- map_dfr(actual_files, function(file) {

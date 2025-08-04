@@ -5,7 +5,7 @@ library(scales)
 acs_df <- read_csv("../data/census/state_level_acs_summary_2022.csv", show_col_types = FALSE)
 
 years_to_run <- c("2008", "2012", "2016", "2020", "2024")
-predicted_path <- "output"
+predicted_path <- "../output"
 all_results <- list()
 model_stats <- list()
 
@@ -57,7 +57,7 @@ facet_plot <- ggplot(combined_all, aes(x = pct_black, y = predicted, color = reg
   ) +
   labs(
     title = "Predicted Democratic Vote Share vs. % Black Population",
-    subtitle = glue("Colored by Region • ACS {acs_year} 5-Year Estimates"),
+    subtitle = glue("Shaded by Region • ACS {acs_year} 5-Year Estimates"),
     x = "Percent Black (ACS)",
     y = "Predicted Democratic Vote Share",
     color = "Region"

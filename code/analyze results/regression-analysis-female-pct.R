@@ -8,7 +8,7 @@ library(broom)
 
 years_to_run <- c("2008", "2012", "2016", "2020", "2024")
 acs_year <- 2022
-predicted_path <- "output"
+predicted_path <- "../output"
 dir.create("plots", showWarnings = FALSE)
 
 acs_df <- read_csv("../data/census/state_level_acs_summary_2022.csv", show_col_types = FALSE)
@@ -20,11 +20,12 @@ all_results <- list()
 model_stats <- list()
 
 for (year in years_to_run) {
-  message(glue("📊 Processing {year}..."))
+  message(glue("Processing {year}..."))
   
   file <- list.files(predicted_path, pattern = glue("all_state_predictions_{year}.*\\.csv$"), full.names = TRUE)[1]
   
   predicted_df <- read_csv(file, show_col_types = FALSE) %>%
+    rename_with(tolower)%>%
     transmute(
       state = state,
       predicted = ifelse(vote_share > 1, vote_share / 100, vote_share),
@@ -65,7 +66,7 @@ facet_plot <- ggplot(combined_all, aes(x = pct_female, y = predicted, color = re
   ) +
   labs(
     title = "Predicted Democratic Vote Share vs. % Female Population",
-    subtitle = glue("Colored by Region • ACS {acs_year} 5-Year Estimates"),
+    subtitle = glue("Shaded by Region • ACS {acs_year} 5-Year Estimates"),
     x = "Percent Female (ACS)",
     y = "Predicted Democratic Vote Share",
     color = "Region"

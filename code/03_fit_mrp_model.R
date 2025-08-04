@@ -3,7 +3,7 @@ library(tidyverse)
 
 year = 2008
 prev_year = "2004"
-exit_data <- read_csv(paste0("../data/exit_poll_combined_", year,".csv"))
+exit_data <- read_csv(paste0("../data/exit polls/combined/exit_poll_combined_", year,".csv"))
 
 prev_vote <- read_csv(paste0("../data/past results/", prev_year, "_pres_dem_share_by_state.csv"))
 

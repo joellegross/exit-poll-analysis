@@ -6,7 +6,7 @@ library(scales)
 
 years_to_run <- c("2008", "2012", "2016", "2020", "2024")
 acs_year <- 2022
-predicted_path <- "output"
+predicted_path <- "../output"
 dir.create("plots", showWarnings = FALSE)
 
 acs_df <- read_csv("../data/census/state_level_acs_summary_2022.csv", show_col_types = FALSE)
@@ -65,7 +65,7 @@ facet_plot <- ggplot(combined_all, aes(x = pct_college, y = predicted, color = r
   ) +
   labs(
     title = "Predicted Democratic Vote Share vs. % with College Degree",
-    subtitle = glue("Colored by Region • ACS {acs_year} 5-Year Estimates"),
+    subtitle = glue("Shaded by Region • ACS {acs_year} 5-Year Estimates"),
     x = "Percent Age 25+ with Bachelor’s or Higher (ACS)",
     y = "Predicted Democratic Vote Share",
     color = "Region"
@@ -73,6 +73,5 @@ facet_plot <- ggplot(combined_all, aes(x = pct_college, y = predicted, color = r
   theme_minimal(base_size = 14)
 
 ggsave("../plots/facet_college_vs_predicted.png", plot = facet_plot, width = 12, height = 7)
-write_csv(model_stats_df, "plots/college_regression_table.csv")
 
-message("Done! Plot and regression table saved.")
+message("Plot saved.")

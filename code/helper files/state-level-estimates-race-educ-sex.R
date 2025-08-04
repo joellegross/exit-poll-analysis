@@ -1,6 +1,8 @@
 library(tidycensus)
 library(tidyverse)
 
+## NEED A CENSUS KEY ###
+
 acs_year <- 2022
 
 acs_vars <- c(
