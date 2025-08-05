@@ -1,4 +1,4 @@
-#  Exit Poll Analysis with Multilevel Regression \& Postratification 
+#  Exit Poll Analysis \n with Multilevel Regression \& Postratification 
 **Joelle Gross | Summer 2025 Master's Practicum**
 
 This project compiles, visualizes, and models U.S. presidential election exit poll data to provide state-level estimates of vote share, in states with and without exit polls. It includes:
