@@ -25,7 +25,7 @@ To answer this, I compiled a cleaned archive of exit poll data, applied MRP usin
 - **Census Microdata**: [American Community Survey (ACS 5-Year PUMS via `tidycensus`)](https://www.census.gov/programs-surveys/acs/microdata/access.html)
 
 ### 2. Modeling
-- Multilevel logistic regression via `rstanarm`
+- Multilevel logistic regression via [`rstanarm`](https://cran.r-project.org/web/packages/rstanarm/index.html)
 - Poststratification using Census demographics
 - Model trained on states with exit polls, generalized to those without
 
